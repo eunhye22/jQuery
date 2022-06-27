@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>1. jquery 함수 이해하기</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        
+        console.log('1. jQuery:', jQuery);
+        console.log('2. typeof jQuery:', typeof jQuery);
+        console.log('3. jQuery instanceof Function:', jQuery instanceof Function);
+
+        console.log('4. $:', $);
+        console.log('5. typeof $:', typeof $);
+        console.log('6. $ instanceof Function:', $ instanceof Function);
+
+        console.log('7. jQuery == $:', jQuery == $);
+        console.log('8. jQuery === $:', jQuery === $);
+
+        // -------------------------------------------- //
+
+        // jQuery 함수의 리턴 타입은 JQuery (대문자 J)
+        // jQuery(): JQuery
+
+        $(document).ready(function (params) {
+            console.log('- document.onload event handler invoked.');
+
+            console.log('- params:', params, params === jQuery, params === $);
+            console.log(window.jQuery === window.$, window.$ === jQuery, jQuery === $);
+        });
+        // window의 멤버가 된다 --> 메소드가 된다.
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>

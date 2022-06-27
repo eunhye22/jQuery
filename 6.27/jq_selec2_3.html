@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        
+        $(() => {
+            
+            // eq(n) 메소드 : 지정된 인덱스번호와 일치하는 요소노드를 선택
+            $("#menu li").eq(2).css({ backgroundColor: "yellow" });
+
+            // lt(n) 메소드: 지정된 인덱스번호보다 작은 모든 요소노드 선택
+            $("#menu li:lt(2)").css({ backgroundColor: "red" });
+
+            // gt(n) 메소드: 지정된 인덱스번호보다 큰 모든 요소노드 선택
+            $("#menu li:gt(2)").css({ backgroundColor: "blue" });
+
+        }); //.jq
+        
+    </script>
+
+</head>
+<body>
+   
+    <h1>구조적 가상 클래스 선택자</h1>
+
+    <ul id="menu">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+    </ul>
+   
+</body>
+
+</html>

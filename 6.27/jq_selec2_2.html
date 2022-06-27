@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        
+        $(() => {
+            // 후손선택자 + 구조적 가상클래스 선택자(:even, 짝수번째 요소노드만 선택)
+            $("#menu li:even").css({
+                backgroundColor: "#ff0",
+                color: "white"
+            });
+
+            // 후손선택자 + 구조적 가상클래스 선택자(:odd, 홀수번째 요소노드만 선택)
+            $("#menu li:odd").css({ 
+                backgroundColor: "#0ff",
+                color:"white"
+            });
+
+        }); //.jq
+        
+    </script>
+
+</head>
+<body>
+   
+    <h1>구조적 가상 클래스 선택자</h1>
+
+    <ul id="menu">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+    </ul>
+   
+</body>
+
+</html>
