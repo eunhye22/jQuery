@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        
+         // $.map() 메소드 : 원래의 값 -> 새로운 유형의 값으로 매핑(사상)
+        $(() => {
+            console.clear();
+            
+            var arr1 = [
+                { "area": "서울", "name": "무대리" },
+                { "area": "서울", "name": "홍과장" },
+                { "area": "부산", "name": "박사장" }
+            ]; // 객체를 원소로 가지는 배열
+
+            // 객체 -> 문자열로 매핑(사상)
+            var arr2 = $.map(arr1, function (element, index) {
+                if (element.area == "서울") {
+                    return element;
+                }
+            }); // $.map
+           
+            console.log(arr2);
+
+            // var newArr = [ 1, 2, 3, 4, 5, 6]; 에서 짝수만 추출하기
+            
+            
+
+
+        }); //.jq
+        
+    </script>
+
+</head>
+<body>
+   
+    <h1>탐색 선택자</h1>
+
+    <ul id="menu1">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>    
+    </ul>
+
+    <ul id="menu2">
+        <li>내용4</li>
+        <li>내용5</li>
+        <li>내용6</li>
+    </ul> 
+   
+</body>
+
+</html>
