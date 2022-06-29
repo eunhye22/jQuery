@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <style>
+        body {
+            width: 100vw;
+            height: 5000px;
+
+            background-image: url("https://picsum.photos/200/200" );
+            overflow-y: scroll;
+        }
+    </style>
+
+    <Script>
+
+        $(() => {
+            console.clear();
+
+            window.onscroll = function () {
+
+                let currPos = window.scrollY;
+                let bodyHeight = $("body").height();
+
+                console.log(currPos);
+                console.log(bodyHeight);
+
+                if( currPos > bodyHeight * 0.8 ) {
+                    $("body").css( { height: bodyHeight + 1200 } )
+                }
+            }
+        });
+
+    </Script>
+
+</head>
+<body>
+
+</body>
+</html>
