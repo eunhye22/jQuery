@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    
+    <style>
+        body {
+            width: 100vw;
+            height: 5000px;
+
+            background-image: url("https://picsum.photos/200/200" );
+            overflow-y: scroll;
+        }
+    </style>
+
+    <script>
+
+        // 웹브라우저의 스크롤바가 움직일 때마다 이벤트가 발생
+        // 이 때, 웹브라우저의 view
+        window.onscroll = function () {
+            console.clear(); console.group('onscroll');
+
+            let vh = window.outerHeight;
+
+            let currPos = window.scrollY;
+
+            console.log(`vh: ${vh}, currPos: ${currPos}`);
+
+            console.groupEnd();
+        }
+    </script>
+
+
+</head>
+
+<body>  
+</body>
+
+</html>

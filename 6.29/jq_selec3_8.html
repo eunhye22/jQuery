@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 조작 및 생성</title>
+
+    <style>
+        * {
+            margin : 0;
+            padding: 0;
+        }   /* CSS reset */
+
+        body {
+            line-height: 1;
+        }
+
+        #wrap {
+            /* 스크롤바가 생성될 수 있도록, 충분히 세로 높이를 크게 설정 */
+            height : 5000px;
+            padding-top: 2000px;
+        }
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+
+        window.scrollBy()
+        
+        $(() => {
+            console.clear();
+
+            var topNum = $("h1").offset().top;
+            console.log(`1. topNum: ${topNum}`);
+
+            // 웹브라우저의 수평/수직 스크롤바의 위치(이동거리px단위)를 알고싶다!
+
+            console.log(`2. scrollTop: `, $(window).scrollTop());
+
+            // $(window).scrollTop(1000);
+
+            // $(window).scrollTop(topNum);
+
+            // // 인자값 없이 호출하면, 현재 웹브라우저의 스크롤바 위치를 반환
+            // var sct = $(window).scrollTop();
+            // console.log(`2. sct: ${sct}`); 
+
+        }); //.jq
+        
+    </script>
+</head>
+<body>
+
+    <div id="wrap">
+        <h1>위치 메서드</h1>
+    </div>
+</body>
+
+</html>
