@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(() => {
+            var jQueryEventObj;
+
+            $(".btn1").click(function (e) {
+                console.log('onclicked....');
+                console.log('\t +this:', this);     // document
+                // jQueryEventObj = e;
+
+                // $(".btn1").parent().next().css({ color: "#f00"});
+                // $(this).parent().next().css({ color: "#f00" });
+                $(e.currentTarget).parent().next().css({ color: "#f00" });  // 이게 제일 빠름. 정석
+
+            }); // onclick
+
+
+            $(".btn2").on({
+                "mouseover focus": function(e) {
+                    console.log('onmouseovered or onfocused....');
+                    console.log(e);     // 어떤 이벤트가 발생했는지 확인할 수 있다.
+                    
+                    // $(".btn2").parent().next().css({ color: "#0f0"});
+                    // $(this).parent().next().css({ color: "#0f0"});
+                    $(e.currentTarget).parent().next().css({ color: "#0f0"});
+                }
+            }); // multiple event handler registration
+        
+            // ---------------------------------------------------------------------------
+            // Event Triggering (****)
+            // $(".btn1").click();
+
+            $(".btn1").trigger("click");
+
+        });
+    </script>
+</head>
+
+<body>
+    <p><button class="btn1">버튼1</button></p>
+    <p>내용1</p>
+    <p><button class="btn2">버튼2</button></p>
+    <p>내용2</p>
+</body>
+
+</html>

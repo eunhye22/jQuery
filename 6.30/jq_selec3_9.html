@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 조작 및 생성</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+
+        $(() => {
+            console.clear();
+
+            // <선택자>                 <새 요소>
+            $("#wrap p:eq(2)").after("<p>After</p>");
+
+            // <새 요소>                 <선택자>
+            $("<p>insterAfter</p>").insertAfter("#wrap p:eq(1)");
+
+            // <선택자>                 <새 요소>
+            $("#wrap p:eq(1)").before("<p>Before</p>");
+
+            // <새 요소>                 <선택자>
+            $("<p>insertBefore</p>").insertBefore("#wrap p:eq(0)");
+
+        }); //.jq
+        
+    </script>
+</head>
+<body>
+
+    <div id="wrap">
+        <p>내용1</p>
+        <p>내용2</p>
+        <p>내용3</p>
+    </div>
+</body>
+
+</html>

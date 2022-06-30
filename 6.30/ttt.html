@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    
+    <style>
+        .container h1 {
+            border: 2px solid black;
+        }
+    </style>
+
+    <script>
+        $(() => {
+            console.clear(); console.group("ttt")
+
+            let width = $(".container h1").width();
+            let innerWidth = $(".container h1").innerWidth();
+            let outerWidth = $(".container h1").outerWidth();
+
+            let height = $(".container h1").height();
+            let innerHeight = $(".container h1").innerHeight();
+            let outerHeight = $(".container h1").outerHeight();
+
+            console.log(`1.width: ${width}, 2.innerWidth: ${innerWidth}, 3. outerWidth: ${outerWidth}`);
+            console.log(`1.height: ${height}, 2.innerHeight: ${innerHeight}, 3. outerHeight: ${outerHeight}`);
+        });
+    </script>
+
+
+</head>
+
+<body>  
+    <div class="container">
+        <h1>BOX</h1>
+    </div>
+</body>
+
+</html>

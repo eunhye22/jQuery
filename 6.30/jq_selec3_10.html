@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 조작 및 생성</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        
+        $(() => {
+            console.clear();
+
+            //    <새 요소>                <선택자>
+            $("<li>appendTo</li>").appendTo("#listZone");   // 수직(상하)관계로 넣어라
+
+            //    <선택자>                 <새 요소>
+            $("#listZone").prepend("<li>prepend</li>");
+        }); //.jq
+        
+    </script>
+</head>
+<body>
+
+    <ul id="listZone">
+        <li>리스트</li>
+    </ul>
+</body>
+
+</html>
