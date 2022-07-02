@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(() => {
+
+            // 단일 이벤트 등록 메소드
+            $(".btn1").click( function() {
+                $(".btn1").parent().next().css({ color: "#f00"});
+            }); // onclick
+
+            // 버튼 클릭하면 텍스트 "내용1"이 변경되게 
+            $(".btn1").click( function() {
+                let p = $("p").eq(1).text("하이하이");
+
+                console.log(p);
+            }); // onclick
+
+            // 다중(그룹) 이벤트 등록 메소드
+            $(".btn2").on({
+                // ( onmouseover  |  onmouseout )
+                "mouseover focus": function() {
+                    $(".btn2").parent().next().css({ color: "#0f0"});
+                },
+                
+                // ( onfocus | onblur )
+                "mouseout blur": function() {
+                    $(".btn2").parent().next().css({ color: "#000"});
+                },
+            }); // .on
+
+        });
+    </script>
+</head>
+
+<body>
+    <p><button class="btn1">버튼1</button></p>
+    <p>내용1</p>
+    <p><button class="btn2">버튼2</button></p>
+    <p>내용2</p>
+</body>
+
+</html>

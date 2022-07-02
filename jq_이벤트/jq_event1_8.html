@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <style>
+        body {
+            height : 3000px;
+        }
+    </style>
+    
+    <script>
+        $(() => {
+            // document (즉, 브라우저의 viewport 영역)내에서 마우스가 움직일 때,
+            // 제이쿼리 이벤트 객체를 통해 마우스의 좌표를 얻어낼 수 있음.
+            $(document).on("mousemove", function (e) {
+
+                // *스크롤바의 이동거리를 포함
+                $(".posX").text(e.pageX);
+                $(".posY").text(e.pageY);
+
+                // *스크롤바의 이동거리를 무시
+                // 항상 좌측상단의 꼭짓점을 원점으로 함 (화면 모니터를 기준으로 함)
+                $(".clientX").text(e.clientX);
+                $(".clientY").text(e.clientY);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <h1>mousemove</h1>
+    <p>X : <span class="posX">0</span></p>
+    <p>Y : <span class="posY">0</span></p>
+    <p>clientX : <span class="clientX">0</span></p>
+    <p>clientY : <span class="clientY">0</span></p>
+</body>
+
+</html>

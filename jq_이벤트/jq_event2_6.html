@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+
+    
+    <script>
+        $(() => {
+
+            // $(.btn_1.on).on("mouseover focus", function () {
+            //     alert("HELLO!");
+            // }); //onmouseover, onfocus
+
+            // $(".btn_1").addClass("on");   //class 속성에 "on" 속성값 추가
+
+            // 위의 문제는, 아래의 "라이브 이벤트 등록방식"으로 해결해야함
+
+
+            // 1. dom인 document에 event 등록 
+            // 2. 미래시점에 동적으로 추가될 class 속성값에 대해서도 이벤트가 작동되게 함
+            $(document).on("mouseover focus", ".btn_2.on", function () {
+                alert("WELCOME!");
+            }); // onmouseover, onfocus
+
+            $(".btn_2").addClass("on");     // class 속성에 "on" 속성값 추가
+        });
+    </script>
+
+</head>
+<body>
+    <div id="wrap">
+        <p><button class="btn_1">버튼1</button></p>
+        <p><button class="btn_2">버튼2</button></p>
+    </div>
+
+</html>

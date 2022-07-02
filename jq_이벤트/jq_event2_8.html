@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+
+    
+    <script>
+        $(() => {
+            $(".btn_1").on("mouseover", function () {
+                alert("HELLO!");
+            }); // onmouseover
+
+            // 특징: document에 이벤트 등록하는 특징이 있다! (live event일 경우)
+            $(document).on("mouseover", ".btn_2", function () { // 라이브 단일 이벤트 등록
+                alert("WELCOME!");
+            });  // onmouseover
+
+            // 제이쿼리함수($)로 새로운 요소를 만들려면, 아래와 같이 그저 문자열로
+            // 새로운 태그를 만들면 됨.
+            var btn_2 = $(<p><button class="btn_2">버튼2</button></p>);
+            $("#wrap").append(btn_2);  // 새로운 동적 요소 생성 및 추가
+
+            // 기존 등록된 이벤트의 해지
+
+            $(".del_1").on("click", function () {
+                //                 E.type
+                $(".btn_1").off("mouseover");           // 등록 정적 이벤트 해지
+            });  // onclick
+
+            $(".del_2").on("click", function () {
+                //             E.type    Selector           
+            $(document).off("mouseover", ".btn_2");  // 등록 라이브 이벤트 해지
+            });  // onclick
+        });
+        
+    </script>
+
+</head>
+<body>
+    <div id="wrap">
+        <p><button class="btn_1">버튼1</button></p>
+    </div>
+
+    <div id="wrap">
+        <p><button class="btn_2">버튼2</button></p>
+    </div>
+
+    <p>
+        <button class="del_1">버튼1 이벤트 해지</button>
+        <button class="del_2">버튼2 이벤트 해지</button>
+    </p>
+</body>
+</html>

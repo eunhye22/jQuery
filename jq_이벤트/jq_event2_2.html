@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+
+    
+    <script>
+        $(() => {
+
+            $("#btn1")
+            // 선택자가 선택자 요소노드에 객체(데이터) 저장
+            .data({ "text": "javascript" })
+            .on({ // 객체 리터럴을 통한, 그룹(다중) 이벤트 등록
+                    "mouseover": overFnc,
+                    "mouseout": outFnc
+            });
+
+            $("#btn2")
+            // 선택자가 선택자 요소노드에 객체(데이터) 저장
+            .data({ "text": "welcome!" })
+            .on({ // 객체 리터럴을 통한, 그룹(다중) 이벤트 등록
+                    "mouseover focus": overFnc, // hoisting
+                    "mouseout blur": outFnc     // hoisting
+            });
+
+            function overFnc() {
+                $(".txt").text( $(this).data("text"));
+            }// overFnc
+
+            function outFnc() {
+                $(".txt").text("");
+            }// outFnc
+
+        });
+    </script>
+
+</head>
+<body>
+    <p><button id="btn1">버튼</button></p>
+    <p><button id="btn2">버튼</button></p>
+
+    <p class="txt"></p>
+</body>
+
+</html>
