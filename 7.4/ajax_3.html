@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+    
+    <script>
+
+        $(() => {
+            console.clear();
+
+            $.ajax({    // jQuery 라이브러리의 AJAx 핵심구현 메소드
+                
+                // 1. 로컬/원격 요청 URL 지정
+                url: "http://localhost:8080/temp/persons.xml",
+
+                // 2. 요청한 문서의 타입(유형) 지정
+                type: "post",
+                data: "name=Eunhye&age=28",
+                
+                dataType: "xml",
+
+                // XML 문서를 바인딩
+                success: function (data) {  // callback if succeeded
+                    console.clear(), console.group('success');
+                    // console.log(data);
+
+                    // 받아온 XML 문서에서, <person> 태그를 모두 찾아라!
+                    let persons = $(data).find("person"); // 결과타입은? jQuery: Array-Like Object
+
+                    if (persons.length > 0) {    // 1개 이상의 요소가 있다면,
+                        let tb = $("<table>");   // 새로운 태그 생성
+                            
+                            // jQuery 배열객체의 모든 원소를 순회하는 제이쿼리 메소드
+                            $.each(persons, function (i, person) {
+                                console.log(`i: ${i}, person:`, person);
+                            
+                                // 각 학생의 정보항목들의 값을 획득
+                                let id = $(person).find("id").text();  // <id>태그를 찾아서
+                                let first_name = $(person).find("first_name").text();
+                                let last_name = $(person).find("last_name").text();
+                                let email = $(person).find("email").text();
+                                let gender = $(person).find("gender").text();
+
+                                let row = $("<tr>").
+                                    append(
+                                        $("<td>").text(id),
+                                        $("<td>").text(first_name),
+                                        $("<td>").text(last_name),
+                                        $("<td>").text(email),
+                                        $("<td>").text(gender)
+                                    ); //.append : 하나의 <tr>태그가 완성
+                                
+                                // 위에서 완성시킨 <tr>태그를 <table> 태그의 하위노드로 추가
+                                tb.append(row);
+
+                            }); // $.each
+
+                            $(".wrap").append(tb);
+                    }// if
+                }, //success
+                
+                // 4. 비동기 요청에 대한 응답이 에러로 왔을 때,
+                //    자동으로 callback 되는 메소드
+                error: function (XHR) {  // callback if failed
+                    // console.clear(); 
+                    console.group('error');
+
+                    console.log('\t+ XHR', XHR);   // XmlHttpRequest (내장)객체 - 비동기호출의 근간 
+
+                    console.log('\t+ readyState:', XHR.readyState); // XHR의 상태코드값 출력
+                    console.log('\t', XHR.status);                  // XHR의 상태메시지 출력
+                    console.log('\t', XHR.statusText);              // Ditto.
+                    // console.log('\t', XHR.statusCode());         // 웹서버의 응답 상태코드
+
+                    console.groupEnd();                            
+                }//error
+            
+            }); // ajax
+        
+        }); // jq
+    </script>
+</head>
+
+<body>
+
+    <div class="wrap"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+
+        $(() => {
+            // load
+            $("#newsWrap_1").load("ttt.html #news_1");
+            $("#newsWrap_2").load("ttt.html #news_2");
+
+        }); // jq
+    </script>
+</head>
+
+<body>
+    <h1>LOAD 1</h1>
+    <div id="newsWrap_1"></div>
+
+    <h1>LOAD 2</h1>
+    <div id="newsWrap_2"></div>
+
+</body>
+
+</html>

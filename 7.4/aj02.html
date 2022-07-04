@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    
+    <script defer>
+        console.clear();
+
+        $(() => {
+
+            $('#submit').click((e) => {
+                e.preventDefault();
+
+                // 1. <form> 태그의 입력양식과 사용자가 입력한 값을 기반으로,
+                //    비동기호출시, 전송할 쿼리스트링을 만들어주는 $.serializ() 메소드의 사용 예
+                let serializedStr = $('#form1').serialize();
+                console.log(`serializedStr: ${serializedStr}`);
+
+                // 2. JS객체를 비동기호출시 전송할 쿼리스트링 형태로 만들어주는 
+                //    $.param() 메소드의 예
+                let paramStr = $.param({name: 'Chusik', age: 23});
+                console.log(`paramStr: ${paramStr}`);
+            }); 
+        }); // .jq
+    </script>
+</head>
+<body>
+    
+    <h1>aj02.html</h1>
+
+    <hr>
+
+    <form action="#" id="form1">
+        1. name: <input type="text" name="name"> <br>
+        2. age: <input type="number" name="age">
+
+        <p></p>
+
+        <input type="submit" value="submit" id="submit">
+    </form>
+
+</body>
+</html>

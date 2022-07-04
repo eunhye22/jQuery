@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    
+    <script>
+        $(() => {
+            console.clear();
+
+            $.ajax({    // jQuery 라이브러리의 AJAx 핵심구현 메소드
+                
+                // 1. 로컬/원격 요청 URL 지정
+                url: "json/MOCK_DATA.json",
+
+                // 2. 요청한 문서의 타입(유형) 지정
+                dataType: "json",
+
+                // 3. 비동기 요청에 대한 응답이 성공적으로 왔을 때,
+                // 자동으로 callback 되는 메소드
+                success: function (data) {  // callback if succeeded
+                    // console.clear(), console.group('success');
+                    // console.log(data);
+
+                    // console.groupEnd();
+
+                    // JSON Binding into DOM tree.
+                    if (data.length > 0) {
+                        var tb = $("<table>");   // 새로운 태그 생성
+                        
+                        for (var i in data) {
+                            var id = data[i].id;
+                            var first_name = data[i].first_name;
+                            var last_name = data[i].last_name;
+                            var email = data[i].email;
+                            var gender = data[i].gender;
+
+                            let row = $("<tr>").
+                                append(
+                                    $("<td>").text(id),
+                                    $("<td>").text(first_name),
+                                    $("<td>").text(last_name),
+                                    $("<td>").text(email),
+                                    $("<td>").text(gender)
+                                ); //.append
+
+                            tb.append(row);
+                        } // enhanced for-in
+                        $(".wrap").append(tb);
+                    }
+
+                }, //success
+                
+                // 4. 비동기 요청에 대한 응답이 에러로 왔을 때,
+                //    자동으로 callback 되는 메소드
+                error: function (XHR) {  // callback if failed
+                    console.group('error');
+                    
+                    console.log('$.ajax::error() invoked.');
+
+                    console.log('\t+ XHR', XHR);   // XmlHttpRequest (내장)객체 - 비동기호출의 근간 
+
+                    console.log('\t+ readyState:', XHR.readyState); // XHR의 상태코드값 출력
+                    console.log('\t', XHR.status);                  // XHR의 상태메시지 출력
+                    console.log('\t', XHR.statusText);              // Ditto.
+                    // console.log('\t', XHR.statusCode());         // 웹서버의 응답 상태코드
+
+                    console.groupEnd();                            
+                }//error
+            
+            }); // ajax
+        
+        }); // jq
+    </script>
+</head>
+
+<body>
+
+    <div class="wrap"></div>
+
+</body>
+
+</html>

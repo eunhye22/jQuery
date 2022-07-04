@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "first_name": "Christa",
+        "last_name": "Anniwell",
+        "email": "canniwell0@hostgator.com",
+        "gender": "Female"
+    },
+    {
+        "id": 2,
+        "first_name": "Marena",
+        "last_name": "Blaby",
+        "email": "mblaby1@ycombinator.com",
+        "gender": "Female"
+    },
+    {
+        "id": 3,
+        "first_name": "Leone",
+        "last_name": "Veneur",
+        "email": "lveneur2@hostgator.com",
+        "gender": "Female"
+    },
+    {
+        "id": 4,
+        "first_name": "Heath",
+        "last_name": "Lankester",
+        "email": "hlankester3@weather.com",
+        "gender": "Male"
+    },
+    {
+        "id": 5,
+        "first_name": "Patton",
+        "last_name": "Hemms",
+        "email": "phemms4@businesswire.com",
+        "gender": "Male"
+    },
+    {
+        "id": 6,
+        "first_name": "Janela",
+        "last_name": "Leahair",
+        "email": "jleahair5@ehow.com",
+        "gender": "Female"
+    },
+    {
+        "id": 7,
+        "first_name": "Rickie",
+        "last_name": "Brawn",
+        "email": "rbrawn6@bigcartel.com",
+        "gender": "Male"
+    },
+    {
+        "id": 8,
+        "first_name": "Latia",
+        "last_name": "Hiland",
+        "email": "lhiland7@wikimedia.org",
+        "gender": "Female"
+    },
+    {
+        "id": 9,
+        "first_name": "Alard",
+        "last_name": "Cadagan",
+        "email": "acadagan8@arstechnica.com",
+        "gender": "Male"
+    },
+    {
+        "id": 10,
+        "first_name": "Jsandye",
+        "last_name": "Edgars",
+        "email": "jedgars9@wiley.com",
+        "gender": "Female"
+    }
+]
